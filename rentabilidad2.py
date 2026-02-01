@@ -14,7 +14,7 @@ def limpiar_moneda(valor):
 @st.cache_data
 def cargar_datos():
     # El archivo debe tener este nombre exacto en GitHub
-    file_name = 'pyg.csv' 
+    file_name = 'pyg_ciudad_tipohuevo.csv' 
     try:
         df = pd.read_csv(file_name, engine='python', encoding='utf-8-sig')
         df.columns = df.columns.str.strip().str.lower().str.replace('\n', '', regex=True)
@@ -99,3 +99,4 @@ if df is not None:
             st.write(f"Venta Total por {cantidad} uds: **${total_v:,.2f}**")
             if alerta: st.warning(alerta)
             st.markdown("---")
+
